@@ -21,11 +21,10 @@ void process_input(GLFWwindow* window);
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height);
 int main(){
     glfwInit();
-    GLFWwindow *window = glfwCreateWindow(800, 600, "hello triangle", NULL, NULL);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
+    GLFWwindow *window = glfwCreateWindow(800, 600, "hello triangle", NULL, NULL);
     if(window == NULL){
         std::cout << "error : GLFW" << std::endl;
         glfwTerminate();
