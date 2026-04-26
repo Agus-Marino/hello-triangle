@@ -28,3 +28,12 @@ target_link_libraries(hello_triangle
     glfw3
     GL
 )
+
+
+add_custom_command(TARGET hello_triangle POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_CURRENT_SOURCE_DIR}/res"
+        "$<TARGET_FILE_DIR:hello_triangle>/res"
+    COMMENT "Copiando recursos (shaders) al directorio de salida"
+)
+
